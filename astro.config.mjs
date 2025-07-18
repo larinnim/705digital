@@ -6,3 +6,4 @@ export default defineConfig({
     outDir: './dist',
     base: '/705digital',
 })
+
