@@ -15,9 +15,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "preview": "astro preview",
+    "deploy": "astro build && gh-pages -d dist", 
     "build": "run-s build:*",
     "build:astro": "astro build",
-    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
