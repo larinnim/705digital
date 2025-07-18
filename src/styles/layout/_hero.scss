@@ -1,0 +1,172 @@
+/* ==========================================================================
+Hero styles
+========================================================================== */
+
+.hero {
+  &.is-grey {
+    background-color: $section-grey;
+  }
+}
+
+.hero-body {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  .title {
+    font-family: $font;
+    color: $blue-grey;
+  }
+
+  .title {
+    &.is-bold {
+      font-weight: 700;
+    }
+  }
+
+  .subtitle {
+    &.is-muted {
+      color: $muted-grey;
+    }
+  }
+
+  .landing-caption {
+    .button {
+      min-width: 130px;
+    }
+  }
+
+  .hero-image {
+    display: block;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .hero-image-composition-1 {
+    position: relative;
+  }
+
+  .hero-image-composition-1 .floating-box.floating-box-1 {
+      bottom: 4rem;
+      right: -4rem;
+      max-width: 240px;
+      min-width: 240px;
+  }
+  .hero-image-composition-1 .floating-box {
+    position: absolute;
+    background: #fff;
+    padding: .85rem;
+    border: 1px solid #dbdbdb;
+    border-radius: .75rem;
+    -webkit-box-shadow: -1px 3px 15px 0 rgba(0, 0, 0, .06);
+    box-shadow: -1px 3px 15px 0 rgba(0, 0, 0, .06);
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content {
+    width: 100%;
+  
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .icon-header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+  ;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: .5rem;
+      width: 100%;
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .pastel-icon.is-success {
+    background: #c4fdef;
+    color: #06d6a0;
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .pastel-icon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+  ;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      min-width: 40px;
+      border-radius: 50%;
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .icon-header .header-text {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 1.0 rem;
+    line-height: 1;
+    color: #444f60;
+    margin-left: .75rem;
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .icon-header .header-stat.is-positive {
+    color: #06d6a0;
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .icon-header .header-stat {
+    margin-left: auto;
+    margin-right: .5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+  }
+  .hero-image-composition-1 .image-wrap {
+    position: relative;
+    margin: 0 auto;
+    max-width: 420px;
+  }
+  .hero-image-composition-1 .image-wrap .curly-image {
+    max-height: 540px;
+    border-radius: 0 5rem 0 5rem;
+  }
+  img {
+      height: auto;
+      max-width: 100%;
+  }
+  .hero-image-composition-1 .floating-box.floating-box-2 {
+    top: 4rem;
+    left: -6rem;
+    max-width: 180px;
+    min-width: 180px;
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .pastel-icon.is-info {
+    background: #cfeffe;
+    color: #039be5;
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .icon-block .pastel-icon {
+    margin: 1rem auto .75rem auto;
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+  }
+  .hero-image-composition-1 .floating-box .floating-box-content .icon-block .block-text {
+    text-align: center;
+  }
+
+  .hero-image-composition-1 .floating-box.floating-box-2 .floating-box-content .icon-block .block-text .block-title {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: large;
+    line-height: 1;
+    color: #444f60;
+  }
+}
+
+.hero-foot {
+  * {
+    border: none !important;
+  }
+
+  img {
+    &.partner-logo {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 100px;
+    }
+  }
+}
