@@ -4,5 +4,6 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     site: 'https://larinnim.github.io',
     base: '/705digital',
+    outDir: "./dist",
 })
 
