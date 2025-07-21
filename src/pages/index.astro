@@ -18,8 +18,8 @@ const title = 'Home'
             <h1 class="title is-1 is-bold is-spaced">Reliable tech support and automation for small businesses in Northern Ontario.</h1>
             <h2 class="subtitle is-5 is-muted"> We handle your digital setup — from email and websites to backups and workflows — so you can focus on your clients.</h2>
             <div>
-              <a class="button cta primary-btn raised mr-2"> Schedule a Free 30-Min Call </a>
-              <a class="button cta"> Get a Free IT Audit</a>
+              <a href="#book-call" class="button cta primary-btn raised mr-2"> Schedule a Free 30-Min Call </a>
+              <!-- <a class="button cta"> Get a Free IT Audit</a> -->
             </div>
           </div>
           <div class="column is-7">
@@ -190,23 +190,24 @@ const title = 'Home'
   </div>
 </section>
 
-  <!-- <section class="section section-feature-grey is-medium">
-    <div class="container">
-      <div class="columns is-vcentered app-side">
-        <div class="column is-4 is-offset-1">
-          <h3 class="title is-3 is-spaced is-title-reveal">An intuitive app</h3>
-          <p class="subtitle is-5 is-muted">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum audissem Antiochum, Brute, ut solebam, cum M. Quae diligentissime contra Aristonem dicuntur a Chryippo.
-          </p>
-        </div>
-        <div class="column is-7">
-          <div class="has-text-centered">
-            <img class="side-image" src="/img/illustrations/workers.svg" />
-          </div>
-        </div>
-      </div>
+ <section class="section is-medium" id="book-call">
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">📅 Book a Free 30-Min IT Audit</h2>
+      <h3 class="subtitle is-5 is-muted">
+        Choose a time that works for you — no back-and-forth emails.
+      </h3>
+      <div class="divider is-centered"></div>
     </div>
-  </section> -->
+
+    <div class="calendly-wrapper" style="max-width: 100%; margin: 0 auto;">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/larinni/new-meeting" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+    </div>
+  </div>
+</section>
   <section class="section is-medium">
     <div class="container">
       <div class="columns is-vcentered">
@@ -233,7 +234,7 @@ const title = 'Home'
           </p>
           <p>📍 Based in Sudbury · Serving clients across Ontario and beyond</p>
           <div class="buttons mt-4">
-            <a href="mailto:contact@705digital.ca" class="button is-info is-light">
+            <a href="mailto:info@705digital.ca" class="button is-info is-light">
               <span class="icon">
                 <i class="fas fa-envelope"></i>
               </span>
@@ -294,7 +295,7 @@ const title = 'Home'
               </ul>
             </li>
           </ul>
-          <a class="button is-fullwidth is-bold mt-4">Get Started</a>
+          <a href="https://calendly.com/larinni/new-meeting" target="_blank" class="button is-fullwidth is-bold mt-4">Get Started</a>
         </div>
 
         <!-- Smart Business Plan -->
@@ -334,7 +335,7 @@ const title = 'Home'
               </ul>
             </li>
           </ul>
-          <a class="button is-fullwidth primary-btn raised is-bold mt-4">Get Started</a>
+          <a href="https://calendly.com/larinni/new-meeting" target="_blank" class="button is-fullwidth primary-btn raised is-bold mt-4">Get Started</a>
         </div>
 
         <!-- Pro Digital Plan -->
@@ -371,7 +372,7 @@ const title = 'Home'
               </ul>
             </li>
           </ul>
-          <a class="button is-fullwidth is-bold mt-4">Get Started</a>
+          <a href="https://calendly.com/larinni/new-meeting" target="_blank" class="button is-fullwidth is-bold mt-4">Get Started</a>
         </div>
       </div>
     </div>
@@ -387,26 +388,28 @@ const title = 'Home'
       <div class="content-wrapper">
         <div class="columns">
           <div class="column is-6 is-offset-3">
-            <form>
+            <form action="https://formspree.io/f/xjkogndj" method="POST">
               <div class="columns is-multiline">
                 <div class="column is-6">
-                  <input class="input is-medium" type="text" placeholder="First Name *" />
+                  <input class="input is-medium" type="text" name="first_name" placeholder="First Name *" required />
                 </div>
                 <div class="column is-6">
-                  <input class="input is-medium" type="text" placeholder="Last Name *" />
+                  <input class="input is-medium" type="text" name="last_name" placeholder="Last Name *" required />
                 </div>
                 <div class="column is-6">
-                  <input class="input is-medium" type="text" placeholder="Email *" />
+                  <input class="input is-medium" type="email" name="email" placeholder="Email *" required />
                 </div>
                 <div class="column is-6">
-                  <input class="input is-medium" type="email" placeholder="Company" />
+                  <input class="input is-medium" type="text" name="company" placeholder="Company" />
                 </div>
                 <div class="column is-12">
-                  <textarea class="textarea" rows="6" placeholder=""></textarea>
+                  <textarea class="textarea" name="message" rows="6" placeholder="How can we help?" required></textarea>
                 </div>
                 <div class="column is-12">
                   <div class="form-footer has-text-right mt-10">
-                    <button class="button cta is-large primary-btn form-button raised is-clear">Request a Free Consult</button>
+                    <button class="button cta is-large primary-btn form-button raised is-clear" type="submit">
+                      Request a Free Consult
+                    </button>
                   </div>
                 </div>
               </div>
