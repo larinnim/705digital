@@ -25,7 +25,7 @@ const title = 'Home'
           <div class="column is-7">
             <div class="hero-image-composition-1">
               <div class="image-wrap">
-                <img class="curly-image" src="/img/illustrations/real-hero.jpg" alt="Female entrepreneur working on laptop">
+                <img class="curly-image" src={`${import.meta.env.BASE_URL}/img/illustrations/real-hero.jpg`} alt="Female entrepreneur working on laptop">
 
                 <!-- Floating box 1 -->
                 <div class="floating-box floating-box-1">
@@ -71,19 +71,19 @@ const title = 'Home'
         <div class="tabs is-centered">
           <ul>
             <li>
-              <a><img class="partner-logo" src="/img/logo/clients/systek.svg" /> </a>
+              <a><img class="partner-logo" src={`${import.meta.env.BASE_URL}/img/logo/clients/google-workspace.svg`} alt="Google Workspace" /></a>
             </li>
             <li>
-              <a><img class="partner-logo" src="/img/logo/clients/tribe.svg" /> </a>
+              <a><img class="partner-logo" src={`${import.meta.env.BASE_URL}/img/logo/clients/microsoft-365.svg`} alt="Microsoft 365" /></a>
             </li>
             <li>
-              <a><img class="partner-logo" src="/img/logo/clients/kromo.svg" /> </a>
+              <a><img class="partner-logo" src={`${import.meta.env.BASE_URL}/img/logo/clients/dropbox.svg`} alt="Dropbox" /></a>
             </li>
             <li>
-              <a><img class="partner-logo" src="/img/logo/clients/infinite.svg" /> </a>
+              <a><img class="partner-logo" src={`${import.meta.env.BASE_URL}/img/logo/clients/xero.svg`} alt="Xero" /></a>
             </li>
             <li>
-              <a><img class="partner-logo" src="/img/logo/clients/gutwork.svg" /> </a>
+              <a><img class="partner-logo" src={`${import.meta.env.BASE_URL}/img/logo/clients/zapier.svg`} alt="Zapier" /></a>
             </li>
           </ul>
         </div>
@@ -92,185 +92,104 @@ const title = 'Home'
   </section>
 
   <section class="section is-medium" id="services">
-    <div class="container">
-      <div class="title-wrapper has-text-centered">
-        <h2 class="title is-2">What We Offer</h2>
-        <h3 class="subtitle is-5 is-muted">IT services to keep your business running smoothly</h3>
-        <div class="divider is-centered"></div>
-      </div>
-
-      <div class="feature-cards content-wrapper">
-        <div class="columns is-multiline">
-
-          <!-- Tech Support -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon">
-                <i class="fa-solid fa-screwdriver-wrench fa-2x"></i>
-              </div>
-              <div class="card-title"><h4>Tech Support</h4></div>
-              <div class="card-text"><p>Help when email, Wi-Fi or tools stop working</p></div>
-            </div>
-          </div>
-
-          <!-- Cloud Setup -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon"><i class="fa-solid fa-cloud fa-2x"></i></div>
-              <div class="card-title"><h4>Cloud Setup</h4></div>
-              <div class="card-text"><p>Google Drive, OneDrive, Dropbox configured right</p></div>
-            </div>
-          </div>
-
-          <!-- Security -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon"><i class="fa-solid fa-shield-halved fa-2x"></i></div>
-              <div class="card-title"><h4>Security</h4></div>
-              <div class="card-text"><p>Backups + antivirus to protect your business</p></div>
-            </div>
-          </div>
-
-          <!-- Website Help -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon"><i class="fa-solid fa-globe fa-2x"></i></div>
-              <div class="card-title"><h4>Website Help</h4></div>
-              <div class="card-text"><p>Make sure your site runs fast and stays online</p></div>
-            </div>
-          </div>
-
-          <!-- Automations -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon"><i class="fa-solid fa-gears fa-2x"></i></div>
-              <div class="card-title"><h4>Automations</h4></div>
-              <div class="card-text"><p>Connect forms to email, calendar, CRM</p></div>
-            </div>
-          </div>
-
-          <!-- AI Tools -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon"><i class="fa-solid fa-robot fa-2x"></i></div>
-              <div class="card-title"><h4>AI Tools</h4></div>
-              <div class="card-text"><p>Smart digests, email drafts, lead summaries</p></div>
-            </div>
-          </div>
-
-          <!-- SEO Visibility -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon"><i class="fa-solid fa-chart-line fa-2x"></i></div>
-              <div class="card-title"><h4>SEO Visibility</h4></div>
-              <div class="card-text"><p>Show up better on Google and reach local clients</p></div>
-            </div>
-          </div>
-
-          <!-- Workstation Setup -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon"><i class="fa-solid fa-laptop fa-2x"></i></div>
-              <div class="card-title"><h4>Workstation Setup</h4></div>
-              <div class="card-text"><p>Get new computers working securely and fast</p></div>
-            </div>
-          </div>
-
-          <!-- ✅ App Maintenance & Build -->
-          <div class="column is-one-third" style="display: flex;">
-            <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
-              <div class="card-icon"><i class="fa-solid fa-mobile-screen-button fa-2x"></i></div>
-              <div class="card-title"><h4>App Maintenance & Build</h4></div>
-              <div class="card-text"><p>Support and develop your mobile/web apps</p></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+  <div class="container">
+    <div class="title-wrapper has-text-centered">
+      <h2 class="title is-2">What We Offer</h2>
+      <h3 class="subtitle is-5 is-muted">Friendly tech services to keep your business running smoothly</h3>
+      <div class="divider is-centered"></div>
     </div>
-  </section>
-  <section class="section is-medium section-feature-grey">
-    <div class="container">
-      <div class="title-wrapper has-text-centered">
-        <h2 class="title is-2">Awesome Features</h2>
-        <h3 class="subtitle is-5 is-muted">Helping you focus on what you love — not your tech</h3>
-        <div class="divider is-centered"></div>
-      </div>
 
-      <div class="columns is-vcentered side-feature mt-60">
-        <div class="column">
-          <h3 class="title is-3 mb-10 is-title-reveal">Let’s Chat About Your Tech Needs</h3>
-          <p class="subtitle is-5 is-muted">
-            Whether you're overwhelmed by cloud tools, email issues, or just want someone to make tech easier — I’m here to help. Let’s connect for a free 30-minute session.
-          </p>
-          <div class="calendly-inline-widget" data-url="https://calendly.com/larinni/new-meeting" style="min-width:320px;height:700px;"></div>
-        </div>
-        <!-- <div class="column is-5">
-          <img src="/img/illustrations/features/feature-1.png" alt="IT Support Graphic" />
-        </div> -->
-      </div>
-
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Who We Help</h2>
-      <p class="subtitle has-text-centered mb-6">
-        We support small service-based businesses that rely on dependable tech and smart automations to operate and grow.
-      </p>
+    <div class="feature-cards content-wrapper">
       <div class="columns is-multiline">
-        <div class="column is-one-third">
-          <div class="box has-text-centered">
-            <h3 class="title is-5">🏢 Real Estate & Mortgage Offices</h3>
-            <p>
-              Brokerages and mortgage professionals who need secure file sharing, reliable email, lead automations, and better visibility on Google.
-            </p>
+
+        <!-- Ongoing Tech Help -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon">
+              <i class="fa-solid fa-screwdriver-wrench fa-2x"></i>
+            </div>
+            <div class="card-title"><h4>Ongoing Tech Help</h4></div>
+            <div class="card-text"><p>Get fast help when your tools, email, or Wi-Fi aren’t working.</p></div>
           </div>
         </div>
 
-        <div class="column is-one-third">
-          <div class="box has-text-centered">
-            <h3 class="title is-5">⚖️ Lawyers & Accountants</h3>
-            <p>
-              Small firms and solo professionals who need secure backups, fast tech support, and a polished, trustworthy web presence.
-            </p>
+        <!-- Cloud Setup -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon"><i class="fa-solid fa-cloud fa-2x"></i></div>
+            <div class="card-title"><h4>Cloud Setup</h4></div>
+            <div class="card-text"><p>We set up Google Drive, OneDrive, or Dropbox so your files are easy to find and share.</p></div>
           </div>
         </div>
 
-        <div class="column is-one-third">
-          <div class="box has-text-centered">
-            <h3 class="title is-5">🧖‍♀️ Wellness Studios</h3>
-            <p>
-              Salons, spas, and massage therapists who want to automate bookings, show up on Google, and stay protected from data loss.
-            </p>
+        <!-- Security & Backups -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon"><i class="fa-solid fa-shield-halved fa-2x"></i></div>
+            <div class="card-title"><h4>Security & Backups</h4></div>
+            <div class="card-text"><p>Antivirus and weekly backups to keep your data and devices safe.</p></div>
           </div>
         </div>
 
-        <div class="column is-one-third">
-          <div class="box has-text-centered">
-            <h3 class="title is-5">🏥 Clinics & Health Practitioners</h3>
-            <p>
-              Physiotherapists, chiropractors, and wellness clinics that rely on solid Wi-Fi, backups, and simple automation for bookings.
-            </p>
+        <!-- Website Help -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon"><i class="fa-solid fa-globe fa-2x"></i></div>
+            <div class="card-title"><h4>Website Help</h4></div>
+            <div class="card-text"><p>We make sure your site runs fast, stays online, and keeps your leads flowing.</p></div>
           </div>
         </div>
 
-        <div class="column is-one-third">
-          <div class="box has-text-centered">
-            <h3 class="title is-5">🔧 Trades & Home Services</h3>
-            <p>
-              Contractors, HVAC, electricians, and plumbers who want working computers, strong Wi-Fi, and a Google presence that brings leads.
-            </p>
+        <!-- Automations -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon"><i class="fa-solid fa-gears fa-2x"></i></div>
+            <div class="card-title"><h4>Automations</h4></div>
+            <div class="card-text"><p>We connect your forms, calendars, emails, and CRMs so things happen automatically.</p></div>
           </div>
         </div>
-        <div class="column is-one-third">
-          <div class="box has-text-centered">
-            <h3 class="title is-5">📊 Local Business Owners</h3>
-            <p>
-              Entrepreneurs and solo operators who want to spend less time fighting tech — and more time growing their business with smart systems and support.
-            </p>
+
+        <!-- AI Tools -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon"><i class="fa-solid fa-robot fa-2x"></i></div>
+            <div class="card-title"><h4>AI Tools</h4></div>
+            <div class="card-text"><p>Get smart digests, email drafts, and summaries of your leads — no extra typing.</p></div>
           </div>
         </div>
+
+        <!-- SEO Visibility -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon"><i class="fa-solid fa-chart-line fa-2x"></i></div>
+            <div class="card-title"><h4>SEO Visibility</h4></div>
+            <div class="card-text"><p>We help your business show up better on Google to attract local customers.</p></div>
+          </div>
+        </div>
+
+        <!-- Workstation Setup -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon"><i class="fa-solid fa-laptop fa-2x"></i></div>
+            <div class="card-title"><h4>Workstation Setup</h4></div>
+            <div class="card-text"><p>We set up your computer or device so it’s secure and ready to work.</p></div>
+          </div>
+        </div>
+
+        <!-- 24/7 Monitoring & Maintenance -->
+        <div class="column is-one-third" style="display: flex;">
+          <div class="feature-card is-bordered has-text-centered is-feature-reveal" style="width: 100%;">
+            <div class="card-icon"><i class="fa-solid fa-mobile-screen-button fa-2x"></i></div>
+            <div class="card-title"><h4>24/7 Monitoring & Maintenance</h4></div>
+            <div class="card-text"><p>We keep watch on your tech around the clock and fix issues before they cause problems.</p></div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   <!-- <section class="section section-feature-grey is-medium">
     <div class="container">
       <div class="columns is-vcentered app-side">
@@ -295,7 +214,7 @@ const title = 'Home'
         <div class="column is-5 has-text-centered-touch">
           <figure class="image" style="max-width: 100%; margin: 0 auto;">
             <img
-              src="/img/logo/bio_larinni.jpg"
+              src={`${import.meta.env.BASE_URL}/img/logo/bio_larinni.jpg`}
               alt="Larinni Malheiros"
               style="border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);"
             />
@@ -332,187 +251,6 @@ const title = 'Home'
       </div>
     </div>
   </section>
-
-  <!-- <section class="section is-medium">
-    <div class="container">
-      <div class="title-wrapper has-text-centered">
-        <h2 class="title is-2">Wait, there's more</h2>
-        <h3 class="subtitle is-5 is-muted">To make you super happy</h3>
-        <div class="divider is-centered"></div>
-      </div>
-
-      <div class="content-wrapper">
-        <div class="columns is-multiline icon-list">
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="fa6-brands:github"></iconify-icon>
-              </div>
-              <h4>Github</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="fa6-brands:bitbucket"></iconify-icon>
-              </div>
-              <h4>Bitbucket</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="fa6-brands:slack"></iconify-icon>
-              </div>
-              <h4>Slack</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="fa6-brands:npm"></iconify-icon>
-              </div>
-              <h4>Npm</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="fluent:javascript-16-regular"></iconify-icon>
-              </div>
-              <h4>Javascript</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="fontisto:nodejs"></iconify-icon>
-              </div>
-              <h4>Nodejs</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="ph:angular-logo"></iconify-icon>
-              </div>
-              <h4>Angular</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="bi:google"></iconify-icon>
-              </div>
-              <h4>Google</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="carbon:logo-python"></iconify-icon>
-              </div>
-              <h4>Python</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="bi:wordpress"></iconify-icon>
-              </div>
-              <h4>WordPress</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="icon-park-solid:android"></iconify-icon>
-              </div>
-              <h4>Android</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-          <div class="column is-3">
-            <div class="feature-icon has-text-centered">
-              <div class="icon-wrap is-icon-reveal">
-                <iconify-icon class="iconify" icon="uiw:apple"></iconify-icon>
-              </div>
-              <h4>Apple</h4>
-              <p>Some feature text</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- <section class="section is-medium has-background-image" data-background="https://source.unsplash.com/g30P1zcOzXo/1600x900" data-color="#4FC1EA" data-color-opacity=".6">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="title-wrapper has-text-centered">
-        <h2 class="title is-2 light-text is-spaced">Our clients love us</h2>
-        <h3 class="subtitle is-5 light-text">Look at what they say about us</h3>
-      </div>
-
-      <div class="testimonials content-wrapper">
-        <div class="columns is-vcentered">
-          <div class="column is-4">
-            <figure class="testimonial">
-              <blockquote>
-                Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
-              </blockquote>
-              <div class="author">
-                <img src="/img/illustrations/faces/1.png" alt="" />
-                <div>
-                  <h5>Irma Walters</h5>
-                  <span>Accountant</span>
-                </div>
-              </div>
-            </figure>
-          </div>
-          <div class="column is-4">
-            <figure class="testimonial">
-              <blockquote>
-                Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
-              </blockquote>
-              <div class="author">
-                <img src="/img/illustrations/faces/2.png" alt="" />
-                <div>
-                  <h5>John Bradley</h5>
-                  <span>Financial Analyst</span>
-                </div>
-              </div>
-            </figure>
-          </div>
-          <div class="column is-4">
-            <figure class="testimonial">
-              <blockquote>
-                Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
-              </blockquote>
-              <div class="author">
-                <img src="/img/illustrations/faces/3.png" alt="" />
-                <div>
-                  <h5>Gary Blackman</h5>
-                  <span>HR Manager</span>
-                </div>
-              </div>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
   <section id="pricing" class="section is-medium">
     <div class="container">
       <div class="title-wrapper has-text-centered">
@@ -527,7 +265,7 @@ const title = 'Home'
         <!-- Starter Plan -->
         <div class="feature-card is-pricing has-text-centered">
           <h3 class="plan-name">Starter</h3>
-          <img src="/img/illustrations/pricing/1.svg" alt="Starter Plan" />
+          <img src={`${import.meta.env.BASE_URL}/img/illustrations/pricing/1.svg`} alt="Starter Plan" />
           <div class="price">From $300</div>
           <p class="mb-4">For solo business owners 👩‍💼 who need reliable tech support and peace of mind.</p>
           <ul class="has-text-left px-5" style="font-size: 0.95rem;">
@@ -562,7 +300,7 @@ const title = 'Home'
         <!-- Smart Business Plan -->
         <div class="feature-card is-pricing has-text-centered">
           <h3 class="plan-name">Smart Business</h3>
-          <img src="/img/illustrations/pricing/2.svg" alt="Smart Business Plan" />
+          <img src={`${import.meta.env.BASE_URL}/img/illustrations/pricing/2.svg`} alt="Smart Business Plan" />
           <div class="tag is-primary is-light is-rounded mb-2">Most Popular</div>
           <div class="price">From $500</div>
           <p class="mb-4">For growing teams 👥 who want smoother workflows and a stronger online presence.</p>
@@ -602,7 +340,7 @@ const title = 'Home'
         <!-- Pro Digital Plan -->
         <div class="feature-card is-pricing has-text-centered">
           <h3 class="plan-name">Pro Digital</h3>
-          <img src="/img/illustrations/pricing/3.svg" alt="Pro Digital Plan" />
+          <img src={`${import.meta.env.BASE_URL}/img/illustrations/pricing/3.svg`} alt="Pro Digital Plan" />
           <div class="price">From $800</div>
           <p class="mb-4">For ambitious businesses 🚀 ready to grow online and automate intelligently.</p>
           <ul class="has-text-left px-5" style="font-size: 0.95rem;">
