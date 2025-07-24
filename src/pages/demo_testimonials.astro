@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Default.astro'
+const title = 'Live Demo'
+---
+
+<Layout title={title}>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-3">💬 Live Testimonials Demo</h1>
+      <div id="testimonials">Loading testimonials...</div>
+    </div>
+  </section>
+
+  <!-- This is correct Astro syntax -->
+  <script is:client>
+    async function fetchTestimonials() {
+  try {
+    const res = await fetch('https://docs.google.com/spreadsheets/d/1zraVZ3d4CSrXKq6Smy-_j1gBWbVTqUqD3TvXSa8P98s/gviz/tq?tqx=out:json&cachebust=' + Date.now());
+    const text = await res.text();
+    const json = JSON.parse(text.substring(47).slice(0, -2));
+    const rows = json.table.rows;
+
+    const container = document.getElementById("testimonials");
+    container.innerHTML = "";
+
+    let found = false;
+
+    rows.forEach(row => {
+      const email = row.c[1]?.v || "";
+      const name = row.c[2]?.v || "Anonymous";
+      const feedback = row.c[3]?.v;
+
+      if (feedback && feedback.trim() !== "") {
+        found = true;
+        const cleanFeedback = feedback.replace(/^"+|"+$/g, '');
+        const avatarUrl = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(name)}&backgroundColor=ececec&fontSize=40`;
+        if (
+        !row.c || row.c.length < 4 ||
+        row.c[2]?.v === "Name" ||
+        row.c[3]?.v === "Feedback"
+        ){
+            container.innerHTML = "<p style='color: gray;'>No testimonials yet. Be the first to leave one!</p>";
+            return;
+        };
+        container.innerHTML += `
+          <div class="testimonial" style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; padding: 1rem; background: #f9f9f9; border-radius: 8px;">
+            <img src="${avatarUrl}" alt="${name}" width="48" height="48" style="border-radius: 50%;" />
+            <div>
+              <blockquote style="font-style: italic; color: #333; margin: 0;">"${cleanFeedback}"</blockquote>
+              <p style="margin: 0.5rem 0 0 0;"><strong>${name}</strong><br><small style="color: gray;">${email}</small></p>
+            </div>
+          </div>
+        `;
+      }
+    });
+
+    if (!found) {
+      container.innerHTML = "<p style='color: gray;'>No testimonials yet. Be the first to leave one!</p>";
+    }
+  } catch (err) {
+    console.error("❌ Failed to fetch or parse data:", err);
+    document.getElementById("testimonials").innerHTML = "<p style='color: red;'>Error loading testimonials. Please try again later.</p>";
+  }
+}
+
+    fetchTestimonials();
+  </script>
+</Layout>

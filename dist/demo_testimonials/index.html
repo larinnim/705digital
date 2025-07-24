@@ -1,0 +1,77 @@
+<!DOCTYPE html><html dir="ltr" lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>705Digital - Live Demo</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><!-- Google Tag Manager --><!-- End Google Tag Manager --><link rel="icon" type="image/png" href="/img/favicon.png"><link rel="stylesheet" href="/_astro/demo_testimonials.imZhvHMb.css"><script type="module" src="/_astro/hoisted.BZ9FVe0-.js"></script></head> <body> <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV65Z24" height="0" width="0" style="display:none;visibility:hidden"></iframe> </noscript> <!-- End Google Tag Manager (noscript) --> <div x-data="initSidebar()" class="sidebar" :class="{
+  'is-active': $store.app.isSiderbarOpen,
+  '': !$store.app.isSiderbarOpen
+}"> <div class="sidebar-header"> <img src="/img/logo/fresh-square.svg"> <a @click="closeSidebar()" class="sidebar-close" href="javascript:void(0);"><iconify-icon class="iconify" icon="lucide:x"></iconify-icon> </a> </div> <div class="inner"> <ul class="sidebar-menu"> <li><span class="nav-section-title"></span></li> <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-1" class="have-children" :class="{
+            'active': openedMenu === 'sidebar-menu-1',
+            '': openedMenu != 'sidebar-menu-1'
+        }"> <a href="#"> <span class="material-icons">apps</span> <span>Apps</span> </a> <ul x-show.transition="openedMenu === 'sidebar-menu-1'"> <li><a href="#">Dashboard</a></li> <li><a href="#">Account</a></li> <li><a href="#">Documents</a></li> </ul> </li> <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-2" class="have-children" :class="{
+            'active': openedMenu === 'sidebar-menu-2',
+            '': openedMenu != 'sidebar-menu-2'
+        }"> <a href="#"> <span class="material-icons">duo</span> <span>Messages</span> </a> <ul x-show.transition="openedMenu === 'sidebar-menu-2'"> <li><a href="#">Inbox</a></li> <li><a href="#">Compose</a></li> <li><a href="#">Video</a></li> </ul> </li> <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-3" class="have-children" :class="{
+            'active': openedMenu === 'sidebar-menu-3',
+            '': openedMenu != 'sidebar-menu-3'
+        }"> <a href="#"> <span class="material-icons">insert_photo</span> <span>Media</span> </a> <ul x-show.transition="openedMenu === 'sidebar-menu-3'"> <li><a href="#">Library</a></li> <li><a href="#">Upload</a></li> </ul> </li> <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-4" class="have-children" :class="{
+            'active': openedMenu === 'sidebar-menu-4',
+            '': openedMenu != 'sidebar-menu-4'
+        }"> <a href="#"> <span class="material-icons">policy</span> <span>Settings</span> </a> <ul x-show.transition="openedMenu === 'sidebar-menu-4'"> <li><a href="#">User settings</a></li> <li><a href="#">App settings</a></li> </ul> </li> </ul> </div> </div> <!--page partial-->  <section class="section"> <div class="container"> <h1 class="title is-3">💬 Live Testimonials Demo</h1> <div id="testimonials">Loading testimonials...</div> </div> </section>  <script is:client>
+    async function fetchTestimonials() {
+  try {
+    const res = await fetch('https://docs.google.com/spreadsheets/d/1zraVZ3d4CSrXKq6Smy-_j1gBWbVTqUqD3TvXSa8P98s/gviz/tq?tqx=out:json&cachebust=' + Date.now());
+    const text = await res.text();
+    const json = JSON.parse(text.substring(47).slice(0, -2));
+    const rows = json.table.rows;
+
+    const container = document.getElementById("testimonials");
+    container.innerHTML = "";
+
+    let found = false;
+
+    rows.forEach(row => {
+      const email = row.c[1]?.v || "";
+      const name = row.c[2]?.v || "Anonymous";
+      const feedback = row.c[3]?.v;
+
+      if (feedback && feedback.trim() !== "") {
+        found = true;
+        const cleanFeedback = feedback.replace(/^"+|"+$/g, '');
+        const avatarUrl = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(name)}&backgroundColor=ececec&fontSize=40`;
+        if (
+        !row.c || row.c.length < 4 ||
+        row.c[2]?.v === "Name" ||
+        row.c[3]?.v === "Feedback"
+        ){
+            container.innerHTML = "<p style='color: gray;'>No testimonials yet. Be the first to leave one!</p>";
+            return;
+        };
+        container.innerHTML += `
+          <div class="testimonial" style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; padding: 1rem; background: #f9f9f9; border-radius: 8px;">
+            <img src="${avatarUrl}" alt="${name}" width="48" height="48" style="border-radius: 50%;" />
+            <div>
+              <blockquote style="font-style: italic; color: #333; margin: 0;">"${cleanFeedback}"</blockquote>
+              <p style="margin: 0.5rem 0 0 0;"><strong>${name}</strong><br><small style="color: gray;">${email}</small></p>
+            </div>
+          </div>
+        `;
+      }
+    });
+
+    if (!found) {
+      container.innerHTML = "<p style='color: gray;'>No testimonials yet. Be the first to leave one!</p>";
+    }
+  } catch (err) {
+    console.error("❌ Failed to fetch or parse data:", err);
+    document.getElementById("testimonials").innerHTML = "<p style='color: red;'>Error loading testimonials. Please try again later.</p>";
+  }
+}
+
+    fetchTestimonials();
+  </script>  <footer class="footer footer-dark"> <div class="container"> <div class="columns is-variable is-6 is-multiline"> <div class="column is-4"> <div class="footer-logo"> <img src="/img/logo/705digital-white.svg" alt="705Digital logo" style="max-width: 160px;"> </div> <p class="is-size-7 has-text-grey-light mt-3">
+Reliable IT and automation services for small businesses in Northern Ontario.
+</p> </div> <div class="column is-4"> <div class="footer-column"> <div class="footer-header"> <h3>Quick Links</h3> </div> <ul class="link-list"> <li><a href="#pricing">Plans & Pricing</a></li> <li><a href="https://calendly.com/larinni/new-meeting" target="_blank">Get a Free Audit</a></li> </ul> </div> </div> <div class="column is-4"> <div class="footer-column"> <div class="footer-header"> <h3>Contact</h3> </div> <ul class="link-list"> <li><span>📍 Sudbury, ON – Canada</span></li> <li> <a href="tel:+17056981248" style="color: white; display: flex; align-items: center; gap: 0.4em;"> <iconify-icon icon="fa6-solid:phone" style="color: white;"></iconify-icon>
+(705) 698-1248
+</a> </li> <li><a href="mailto:info@705digital.ca">✉️ info@705digital.ca</a></li> </ul> </div> </div> </div> <div class="has-text-centered has-text-grey-lighter is-size-7 mt-6">
+&copy; 2025 705Digital. All rights reserved.
+</div> </div> </footer> <!--Back to top--> <!-- Back To Top Button --><div x-data="initBackToTop()" x-on:scroll.window="scroll($event)" @click="goTop($event)" id="backtotop"> <a href="javascript:" :class="{
+    'visible': scrolled,
+    '': !scrolled
+}"></a> </div> <script src="https://kit.fontawesome.com/1ce38e6661.js" crossorigin="anonymous"></script>  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> </body> </html>
